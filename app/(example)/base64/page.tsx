@@ -17,8 +17,9 @@ export default async function StaticBlurImagePage() {
     )
   const images = await getImages("./public/assets/images/unsplash/*.{jpg,png}")
   return (
-    <div className="relative">
-      <p className="mb-2 font-semibold">Blur</p>
+    <div className="relative p-4">
+      <h1 className="mb-2 text-4xl font-semibold">Static Import with Blur</h1>
+      <hr className="p-4" />
       <div className="relative grid grid-cols-1 gap-4 overflow-hidden rounded-lg md:grid-cols-2 lg:grid-cols-3">
         {images.map(({ base64, img }) => (
           <div className="relative aspect-square" key={img.src}>
