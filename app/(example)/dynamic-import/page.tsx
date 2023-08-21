@@ -1,10 +1,5 @@
-import * as React from "react"
 import Image from "next/image"
-// import { config } from "@/config"
-// import { imageList, imageListItem } from "@plaiceholder/ui"
 import { getPlaiceholder } from "plaiceholder"
-
-// import Article from "@/components/article"
 
 const getImage = async (src: string) => {
   const buffer = await fetch(src).then(async (res) =>
@@ -23,9 +18,9 @@ const getImage = async (src: string) => {
 }
 
 export default async function Page() {
-  const { base64, img } = await getImage(
+  const examplePath =
     "https://images.unsplash.com/photo-1621961458348-f013d219b50c?auto=format&fit=crop&w=2850&q=80"
-  )
+  const { base64, img } = await getImage(examplePath)
 
   return (
     <ul role="list">

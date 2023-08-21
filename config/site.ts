@@ -16,7 +16,7 @@ export const siteConfig = {
   routes: [
     {
       title: "Static Import with Blur",
-      href: '/base64'
+      href: '/static-import'
     },
     {
       title: "Dynamic Import with Blur",
