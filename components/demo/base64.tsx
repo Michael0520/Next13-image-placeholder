@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { getPlaiceholder } from "plaiceholder"
 
+import { imageProps } from "@/app/page"
+
 const getImage = async (src: string) => {
   const buffer = await fetch(src).then(async (res) =>
     Buffer.from(await res.arrayBuffer())
@@ -17,14 +19,13 @@ const getImage = async (src: string) => {
   }
 }
 
-export default async function Page() {
-  const examplePath =
-    "https://images.unsplash.com/photo-1621961458348-f013d219b50c?auto=format&fit=crop&w=2850&q=80"
-  const { base64, img } = await getImage(examplePath)
+export default async function Base64ImageComponent({ imageSrc }: imageProps) {
+  const { base64, img } = await getImage(imageSrc)
 
   return (
-    <ul role="list">
-      <li key={img.src}>
+    <div className="flex flex-col items-center justify-center">
+      <h2>Base64</h2>
+      <div className="relative h-[200px] w-[200px]">
         <Image
           {...img}
           alt="Snowy mountain peaks"
@@ -32,7 +33,7 @@ export default async function Page() {
           blurDataURL={base64}
           placeholder="blur"
         />
-      </li>
-    </ul>
+      </div>
+    </div>
   )
 }
