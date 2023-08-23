@@ -16,7 +16,6 @@ export default function IndexPage() {
     "https://images.unsplash.com/photo-1621961458348-f013d219b50c?auto=format&fit=crop&w=2850&q=80"
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      {/* // @ts-expect-error */}
       <StaticBlurImagePage />
       <div className="grid-col-1 grid items-center justify-center md:grid-cols-2  lg:grid-cols-4">
         <Base64ImageComponent imageSrc={examplePath} />
